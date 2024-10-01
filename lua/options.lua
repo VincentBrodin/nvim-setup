@@ -22,7 +22,15 @@ end
 
 RemoveBg()
 
-require("nvim-tree").setup {
+local nvimTree = require "nvim-tree"
+
+-- local nomap = vim.keymap.del
+-- nomap("n", "<leader>e")
+-- nomap("n", "<C-n>")
+-- local map = vim.keymap.set
+-- map("n", "<leader>e", vim.cmd "NvimTreeToggle", { desc = "Toggle explorer" })
+
+nvimTree.setup {
 	actions = {
 		open_file = {
 			quit_on_open = true,
@@ -30,7 +38,6 @@ require("nvim-tree").setup {
 	},
 	renderer = {
 		highlight_git = "all",
-		highlight_opened_files = "all",
 		highlight_modified = "all",
 		highlight_hidden = "all",
 		indent_markers = {
@@ -44,6 +51,7 @@ require("nvim-tree").setup {
 		},
 		add_trailing = true,
 		indent_width = 4,
+		hidden_display = "all",
 	},
 	sort = {
 		folders_first = true,
